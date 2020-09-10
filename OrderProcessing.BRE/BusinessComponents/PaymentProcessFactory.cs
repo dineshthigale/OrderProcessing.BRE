@@ -6,6 +6,6 @@ namespace OrderProcessing.BRE.BusinessComponents
 {
     public class PaymentProcessFactory 
     {
-        
+         
     }
 }
