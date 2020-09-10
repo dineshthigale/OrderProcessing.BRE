@@ -7,18 +7,18 @@ namespace OrderProcessing.BRE
     {
         static void Main(string[] args)
         {
-            string paymentStatus = string.Empty;
+            int paymentStatus;
             Console.WriteLine("Please Select Order Type:");
-            Console.WriteLine("PhyiscalProduct\n" +
-                              "Book\n" +
-                              "MembershipActivate\n" +
-                              "MembershipUpgrade\n" +
-                              "Video\n");
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("1:PhysicalProduct \n" +
+                              "2:Book\n" +
+                              "3:MembershipActivate\n" +
+                              "4:MembershipUpgrade\n" +
+                              "5:Video\n");
 
-            var userInput = Console.ReadLine();
+            var paymentType = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(userInput))
+           
+            if (Int32.TryParse(paymentType, out paymentStatus))
             {
                 OrderPaymentProcess(paymentStatus);
             }
@@ -30,7 +30,7 @@ namespace OrderProcessing.BRE
 
         }
 
-        private static void OrderPaymentProcess(string PaymentType)
+        private static void OrderPaymentProcess(int PaymentType)
         {
             IPayment payment = PaymentProcessFactory.Payment(PaymentType);
             if (payment == null)

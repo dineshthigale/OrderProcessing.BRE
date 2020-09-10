@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OrderProcessing.BRE.BusinessComponents
 {
-    public class PhysicalProduct : IPayment, IPackagingSlip, IPaymentCommissionToAgent
+    public class PhysicalProduct : IPayment, IPackingSlip, IPaymentCommissionToAgent
     {
         public bool CommissionToAgent()
         {
@@ -12,16 +12,16 @@ namespace OrderProcessing.BRE.BusinessComponents
             return true;
         }
 
-        public bool GeneratePackagingSlip()
+        public bool GeneratePackingSlip()
         {
-            //TODO implementation for genrate a packaging slip
-            Console.WriteLine("Generated a Packaging slip for shipping");
+            Console.WriteLine("Generated a Packing slip for shipping");
             return true;
         }
+
         //Payament process for physical product
         public bool PaymentProcess()
-        {            
-            GeneratePackagingSlip();
+        {
+            GeneratePackingSlip();
 
             CommissionToAgent();
 

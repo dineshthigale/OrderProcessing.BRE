@@ -6,10 +6,10 @@ namespace OrderProcessing.BRE
 {
     public enum PaymentType
     {
-        PhysicalProduct,
-        Book,
-        MembershipActivate,
-        MembershipUpgrade,
-        Video
+        PhysicalProduct = 1,
+        Book = 2,
+        MembershipActivate = 3,
+        MembershipUpgrade = 4,
+        Video = 5
     }
 }

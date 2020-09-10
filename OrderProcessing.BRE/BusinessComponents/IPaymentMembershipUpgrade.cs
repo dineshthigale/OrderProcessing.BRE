@@ -4,8 +4,8 @@ using System.Text;
 
 namespace OrderProcessing.BRE.BusinessComponents
 {
-    public interface IPackagingSlip
+    public interface IPaymentMembershipUpgrade
     {
-        bool GeneratePackagingSlip();
+        bool UpgradeMembership();
     }
 }

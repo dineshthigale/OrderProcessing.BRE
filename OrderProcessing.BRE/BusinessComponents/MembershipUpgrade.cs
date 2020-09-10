@@ -4,11 +4,28 @@ using System.Text;
 
 namespace OrderProcessing.BRE.BusinessComponents
 {
-    public class MembershipActivate : IPayment
+    public class MembershipUpgrade : IPayment, IPaymentMembershipUpgrade, IEmailNotification
     {
+        public bool EmailNotificationToOwner()
+        {
+            Console.WriteLine("Email notification sent to the owner");
+            return true;
+        }
+
         public bool PaymentProcess()
         {
-            throw new NotImplementedException();
+            UpgradeMembership();
+
+            EmailNotificationToOwner();
+
+            return true;
+
+        }
+
+        public bool UpgradeMembership()
+        {
+            Console.WriteLine("Membership upgraded");
+            return true;
         }
     }
 }
